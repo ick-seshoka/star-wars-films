@@ -23,7 +23,7 @@ export const Title = styled.h3`
 export const InputWrap = styled.div`
   display: grid;
   grid-template-columns: auto 5em;
-  height: 4em;
+  height: 3.5em;
   border: 1px solid ${({ theme: { colors } }) => colors.background.gray};
   border-radius: 2em;
   padding: 0.2em;
@@ -33,7 +33,7 @@ export const Input = styled.input`
   background: transparent;
   border: none;
   outline: none;
-  padding-left: 1.4em;
+  padding-left: 1em;
   padding-right: 0.5em;
   color: ${({ theme: { colors } }) => colors.text.white};
   font-weight: ${({ theme: { font } }) => font.weight.medium};
