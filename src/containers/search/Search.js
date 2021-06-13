@@ -4,11 +4,14 @@ import Header from "@components/header";
 import SearchInput from "@components/search-input";
 
 import { Background, Container } from "./styles";
+import { axios } from "@helpers";
+import { searchConfig } from "@api/search";
 
 const Search = () => {
   const [search, setSearch] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [films, setFilms] = useState([]);
 
   const mounted = useRef();
   let searchInterval = null;
@@ -20,6 +23,17 @@ const Search = () => {
       if (search !== "") {
         searchInterval = setTimeout(() => {
           setLoading(true);
+          axios(searchConfig(search))
+            .then(({ data: { results } }) => {
+              setFilms(results);
+            })
+            .catch((error) => {
+              setError("Something went wrong:(, please try again");
+              logger(error);
+            })
+            .finally(() => {
+              setLoading(false);
+            });
         }, 500);
       } else {
         setLoading(false);
