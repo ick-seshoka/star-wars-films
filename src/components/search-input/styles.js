@@ -36,7 +36,7 @@ export const Input = styled.input`
   padding-left: 1em;
   padding-right: 0.5em;
   color: ${({ theme: { colors } }) => colors.text.white};
-  font-weight: ${({ theme: { font } }) => font.weight.medium};
+  font-weight: ${({ theme: { font } }) => font.weight.regular};
   font-size: ${({ theme: { font } }) => font.size.text};
 `;
 
