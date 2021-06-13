@@ -1,7 +1,15 @@
 import React from "react";
 
-import { Container } from "./styles";
+import Header from "@components/header";
 
-const Search = () => <Container>Search page</Container>;
+import { Background, Container } from "./styles";
+
+const Search = () => (
+  <Background>
+    <Container>
+      <Header />
+    </Container>
+  </Background>
+);
 
 export default Search;
