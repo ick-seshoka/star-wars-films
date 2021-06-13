@@ -8,6 +8,7 @@ import { Background, Container } from "./styles";
 const Search = () => {
   const [search, setSearch] = useState("");
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
   const mounted = useRef();
   let searchInterval = null;
@@ -43,6 +44,7 @@ const Search = () => {
           setSearch={inputChange}
           search={search}
           loading={loading}
+          error={error}
         />
       </Container>
     </Background>
