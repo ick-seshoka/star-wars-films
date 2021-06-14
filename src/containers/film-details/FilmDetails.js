@@ -5,6 +5,7 @@ import { axios, logger } from "@helpers";
 import { filmDetailsConfig } from "@api/film-details";
 import BackgroundWrap from "@components/background-wrap";
 import Header from "@components/header";
+import Details from "./Detials";
 
 import { Container } from "./styles";
 
@@ -39,6 +40,7 @@ const FilmDetails = () => {
     <BackgroundWrap>
       <Container>
         <Header />
+        {filmDetails && <Details details={filmDetails} />}
       </Container>
     </BackgroundWrap>
   );
