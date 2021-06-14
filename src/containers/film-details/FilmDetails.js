@@ -19,21 +19,15 @@ const FilmDetails = () => {
 
   useEffect(() => {
     const id = query.get("id");
-    let request = axios.CancelToken.source();
 
-    axios(filmDetailsConfig(id, request.token))
+    axios(filmDetailsConfig(id))
       .then(({ data }) => {
-        setFilmsDetails(data);
+        setFilmsDetails({ id, ...data });
       })
       .catch((error) => {
-        if (axios.isCancel(error)) return;
         setError("Something went wrong");
         logger(error);
       });
-
-    return () => {
-      request.cancel("cancel pending request");
-    };
   }, []);
 
   return (

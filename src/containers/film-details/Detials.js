@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useEffect, useContext } from "react";
 import PropTypes from "prop-types";
+
+import { SearchHistoryContext } from "@contexts/search-history";
 
 import {
   Author,
@@ -14,7 +16,9 @@ import {
 } from "./styles";
 
 const Details = ({ details }) => {
+  const { addFilmToSearchHistory } = useContext(SearchHistoryContext);
   const {
+    id,
     title,
     episode_id,
     opening_crawl,
@@ -23,6 +27,10 @@ const Details = ({ details }) => {
     release_date,
     created,
   } = details;
+
+  useEffect(() => {
+    addFilmToSearchHistory({ id, title });
+  }, []);
 
   return (
     <DetailsWrap>
