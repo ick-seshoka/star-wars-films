@@ -6,7 +6,7 @@ import MagnifyingGlassIcon from "@assets/icons/magnifying-glass-icon.svg";
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  width: 25em;
+  width: 35em;
   justify-self: center;
   justify-content: center;
 `;
@@ -38,6 +38,10 @@ export const Input = styled.input`
   color: ${({ theme: { colors } }) => colors.text.white};
   font-weight: ${({ theme: { font } }) => font.weight.regular};
   font-size: ${({ theme: { font } }) => font.size.text};
+
+  ::placeholder {
+    color: ${({ theme: { colors } }) => colors.text.white};
+  }
 `;
 
 export const SearchIcon = styled.span`

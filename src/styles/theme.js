@@ -8,7 +8,8 @@ export const theme = {
     },
     background: {
       gray: "#C4C4C4",
-      filter: "linear-gradient(180deg, rgba(0, 0, 0, 0.4) 0%, #000000 75%)",
+      filter:
+        "linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 1) 100%)",
       red: "#EF9A9A",
       white: "#F5F5F5",
     },
@@ -16,7 +17,7 @@ export const theme = {
   font: {
     size: {
       label: "1em",
-      title: "1.95em",
+      title: "2.65em",
       text: "1.45em",
       smallTitle: "1.25em",
       largeTitle: "2.85em",
