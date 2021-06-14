@@ -2,19 +2,13 @@ import React, { useEffect, useRef, useState } from "react";
 
 import { axios, logger } from "@helpers";
 import { searchConfig } from "@api/search";
+import BackgroundWrap from "@components/background-wrap";
 import Header from "@components/header";
 import SearchInput from "@components/search-input";
 import Loader from "@components/loader";
 import Films from "./films";
 
-import {
-  Background,
-  Container,
-  Status,
-  Error,
-  EmptyFilms,
-  FilmsCount,
-} from "./styles";
+import { Container, Status, Error, EmptyFilms, FilmsCount } from "./styles";
 
 const Search = () => {
   const [search, setSearch] = useState("");
@@ -23,10 +17,10 @@ const Search = () => {
   const [films, setFilms] = useState(null);
   const mounted = useRef();
 
-  let searchInterval = null;
-  let request = axios.CancelToken.source();
-
   useEffect(() => {
+    let searchInterval = null;
+    let request = axios.CancelToken.source();
+
     if (!mounted.current) {
       mounted.current = true;
     } else {
@@ -72,7 +66,7 @@ const Search = () => {
   const noFilms = filmsCount === 0 && !loading && !error && search !== "";
 
   return (
-    <Background>
+    <BackgroundWrap>
       <Container>
         <Header />
         <SearchInput
@@ -95,7 +89,7 @@ const Search = () => {
         </Status>
         <Films films={films} />
       </Container>
-    </Background>
+    </BackgroundWrap>
   );
 };
 export default Search;

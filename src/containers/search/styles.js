@@ -1,12 +1,5 @@
 import styled, { css } from "styled-components";
 
-export const Background = styled.div`
-  display: flex;
-  flex-direction: column;
-  background-color: ${({ theme: { colors } }) => colors.background.gray};
-  background: ${({ theme: { colors } }) => colors.background.filter};
-`;
-
 export const Container = styled.div`
   display: grid;
   grid-template-rows: 9.375em 15em 5em 40em;
