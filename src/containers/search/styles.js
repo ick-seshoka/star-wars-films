@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 
 export const Container = styled.div`
   display: grid;
-  grid-template-rows: 9.375em 15em 5em auto;
+  grid-template-rows: 9.375em 15em 5em auto auto;
   width: 90em;
   margin: 0 auto;
 `;
