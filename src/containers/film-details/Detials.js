@@ -6,7 +6,6 @@ import { formatDate } from "@helpers";
 
 import {
   Author,
-  DateInfo,
   DetailsWrap,
   EM,
   Episode,
@@ -27,7 +26,6 @@ const Details = ({ details }) => {
     director,
     producer,
     release_date,
-    created,
   } = details;
 
   useEffect(() => {
@@ -47,9 +45,6 @@ const Details = ({ details }) => {
       <Wrap>
         <Author>{`Prod: ${producer}`}</Author>
         <Author>{`Dir: ${director}`}</Author>
-        <DateInfo>
-          <EM>{`created: ${formatDate(created)}`}</EM>
-        </DateInfo>
       </Wrap>
     </DetailsWrap>
   );
