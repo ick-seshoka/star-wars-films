@@ -3,6 +3,7 @@ export const theme = {
     text: {
       white: "#FFFFFF",
       red: "#EF9A9A",
+      gray: "#F5F5F5",
     },
     background: {
       gray: "#C4C4C4",
@@ -14,6 +15,7 @@ export const theme = {
     size: {
       title: "1.95em",
       text: "1.45em",
+      smallTitle: "1.25em",
     },
     weight: {
       light: "300",

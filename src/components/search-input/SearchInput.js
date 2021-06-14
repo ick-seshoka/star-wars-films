@@ -1,21 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import Loader from "@components/loader";
+import { Container, Icon, Input, InputWrap, SearchIcon, Title } from "./styles";
 
-import {
-  Container,
-  Error,
-  Icon,
-  Input,
-  InputWrap,
-  SearchIcon,
-  Title,
-} from "./styles";
-
-const SearchInput = ({ setSearch, search, loading, error }) => (
+const SearchInput = ({ setSearch, search }) => (
   <Container>
-    <Title>Serach for your favourite star wars movie</Title>
+    <Title>Search for your favourite star wars movie</Title>
     <InputWrap>
       <Input
         type="text"
@@ -27,23 +17,17 @@ const SearchInput = ({ setSearch, search, loading, error }) => (
         <Icon />
       </SearchIcon>
     </InputWrap>
-    {loading && <Loader />}
-    {!loading && error && error !== "" && <Error>{error}</Error>}
   </Container>
 );
 
 SearchInput.defaultProps = {
   setSearch: () => {},
   search: "",
-  loading: false,
-  error: {},
 };
 
 SearchInput.propTypes = {
   setSearch: PropTypes.func.isRequired,
   search: PropTypes.string,
-  loading: PropTypes.bool.isRequired,
-  error: PropTypes.string,
 };
 
 export default SearchInput;

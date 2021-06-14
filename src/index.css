@@ -2,13 +2,6 @@
   --gray: #c4c4c4;
 }
 
-html,
-body,
-#root {
-  width: 100%;
-  height: 100%;
-}
-
 body {
   font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;

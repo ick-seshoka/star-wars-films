@@ -49,9 +49,3 @@ export const SearchIcon = styled.span`
 `;
 
 export const Icon = styled(IconSource).attrs({ src: MagnifyingGlassIcon })``;
-
-export const Error = styled.div`
-  text-align: center;
-  margin-top: 0.5em;
-  color: ${({ theme: { colors } }) => colors.text.red};
-`;
