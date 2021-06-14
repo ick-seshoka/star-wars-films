@@ -7,6 +7,7 @@ import Header from "@components/header";
 import SearchInput from "@components/search-input";
 import Loader from "@components/loader";
 import Films from "./films";
+import SearchHistory from "@containers/search-history";
 
 import { Container, Status, Error, EmptyFilms, FilmsCount } from "./styles";
 
@@ -88,6 +89,7 @@ const Search = () => {
           )}
         </Status>
         <Films films={films} />
+        <SearchHistory />
       </Container>
     </BackgroundWrap>
   );

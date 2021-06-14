@@ -4,11 +4,14 @@ import Icon from "@components/icon";
 import FilmCardBackground from "@assets/icons/film-card-background.svg";
 
 export const Container = styled.div`
-  display: grid;
-  grid-template-rows: 12.5em auto;
+  display: flex;
+  flex-direction: column;
   justify-self: center;
   transition: all 0.25s cubic-bezier(0.075, 0.82, 0.165, 1);
   transform: scale(1);
+  width: 14.5em;
+  height: 16.5em;
+  margin: 0em 1.5em;
 
   &:hover {
     cursor: pointer;

@@ -5,8 +5,8 @@ import Icon from "@components/icon";
 import LogoIconSvg from "@assets/icons/logo-icon.svg";
 
 export const Container = styled.div`
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   align-items: center;
   width: 100%;
   height: 100%;

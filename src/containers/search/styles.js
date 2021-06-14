@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 
 export const Container = styled.div`
   display: grid;
-  grid-template-rows: 9.375em 15em 5em 40em;
+  grid-template-rows: 9.375em 15em 5em auto auto;
   width: 90em;
   margin: 0 auto;
 `;
@@ -34,7 +34,7 @@ export const FilmsCount = styled.div`
 
 export const FilmsContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 20em);
-  grid-template-rows: repeat(2, 16.5em);
+  grid-template-columns: repeat(3, auto);
+  grid-template-rows: repeat(2, auto);
   justify-self: center;
 `;
