@@ -5,6 +5,7 @@ export const Container = styled.div`
   grid-template-rows: 9.375em 15em 5em auto auto;
   width: 90em;
   margin: 0 auto;
+  padding-bottom: 8em;
 `;
 
 const statusTextStyles = css`

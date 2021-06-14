@@ -17,7 +17,6 @@ export const Container = styled.div`
   flex-direction: row;
   justify-content: center;
   margin-top: 0.7em;
-  margin-bottom: 8em;
 `;
 
 export const FilmWrap = styled.div`

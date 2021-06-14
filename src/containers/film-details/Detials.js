@@ -2,6 +2,7 @@ import React, { useEffect, useContext } from "react";
 import PropTypes from "prop-types";
 
 import { SearchHistoryContext } from "@contexts/search-history";
+import { formatDate } from "@helpers";
 
 import {
   Author,
@@ -39,7 +40,7 @@ const Details = ({ details }) => {
       <Wrap>
         <Episode>{`Episode ${episode_id}`}</Episode>
         <ReaseDate>
-          <EM>{`released ${release_date}`}</EM>
+          <EM>{`released: ${formatDate(release_date)}`}</EM>
         </ReaseDate>
       </Wrap>
       <OpeningCrawl>{opening_crawl}</OpeningCrawl>
@@ -47,7 +48,7 @@ const Details = ({ details }) => {
         <Author>{`Prod: ${producer}`}</Author>
         <Author>{`Dir: ${director}`}</Author>
         <DateInfo>
-          <EM>{`created: ${created}`}</EM>
+          <EM>{`created: ${formatDate(created)}`}</EM>
         </DateInfo>
       </Wrap>
     </DetailsWrap>
