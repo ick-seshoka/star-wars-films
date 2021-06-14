@@ -3,7 +3,7 @@ import { Switch, Route } from "react-router-dom";
 
 import { routes } from "@enums";
 import Search from "@containers/search";
-import FilmDetails from "@components/film-details";
+import FilmDetails from "@containers/film-details";
 import InvalidPage from "@components/invalid-page";
 
 const Router = () => (
