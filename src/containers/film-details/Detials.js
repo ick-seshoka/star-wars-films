@@ -17,6 +17,7 @@ import {
 
 const Details = ({ details }) => {
   const { addFilmToSearchHistory } = useContext(SearchHistoryContext);
+
   const {
     id,
     title,
