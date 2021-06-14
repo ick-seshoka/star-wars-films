@@ -1,3 +1,3 @@
-export function log(message) {
+export function logger(message) {
   console.log(message);
 }

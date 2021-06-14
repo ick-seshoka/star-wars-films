@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 
-import { axios } from "@helpers";
+import { axios, logger } from "@helpers";
 import { searchConfig } from "@api/search";
 import Header from "@components/header";
 import SearchInput from "@components/search-input";

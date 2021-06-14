@@ -1,4 +1,4 @@
 export const routes = {
   home: "/",
-  film: "/film/:id",
+  film: "/film",
 };
