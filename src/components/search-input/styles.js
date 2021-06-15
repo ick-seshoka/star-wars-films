@@ -46,7 +46,8 @@ export const Input = styled.input`
 
 export const SearchIcon = styled.span`
   display: flex;
-  background-color: ${({ theme: { colors } }) => colors.background.gray};
+  background-color: ${({ theme: { colors } }) =>
+    colors.background.transparentGray};
   border-radius: 2em;
   align-items: center;
   justify-content: center;

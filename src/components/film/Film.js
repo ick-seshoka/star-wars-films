@@ -20,7 +20,7 @@ const Film = ({ title, url, ...rest }) => {
 
   return (
     <Container onClick={redirectToFilm}>
-      <FilmImage film={title} />
+      <FilmImage imageId={id} />
       <Title>{title}</Title>
     </Container>
   );

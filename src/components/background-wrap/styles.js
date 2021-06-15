@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
-import ANewHopeCover from "@assets/images/a-new-hope.jpeg";
-import TheEmpireStrikesBackCover from "@assets/images/the-empire-strikes-back.jpeg";
-import ReturnOfTheJediCover from "@assets/images/return-of-the-jedi.png";
-import ThePhantomMenaceCover from "@assets/images/the-phantom-menace.jpg";
-import AttackOfTheClonesCover from "@assets/images/attack-of-the-clones.jpg";
-import RevengeOfTheSithCover from "@assets/images/revenge-of-the-sith.jpeg";
-import StarWarsCover from "@assets/images/star-wars.jpg";
+import ANewHopeCover from "@assets/images/a-new-hope-cover.jpeg";
+import TheEmpireStrikesBackCover from "@assets/images/the-empire-strikes-back-cover.jpeg";
+import ReturnOfTheJediCover from "@assets/images/return-of-the-jedi-cover.png";
+import ThePhantomMenaceCover from "@assets/images/the-phantom-menace-cover.jpg";
+import AttackOfTheClonesCover from "@assets/images/attack-of-the-clones-cover.jpg";
+import RevengeOfTheSithCover from "@assets/images/revenge-of-the-sith-cover.jpeg";
+import StarWarsCover from "@assets/images/star-wars-cover.jpg";
 
 const getBackgroundImage = (imageId = 0) => {
   switch (imageId) {

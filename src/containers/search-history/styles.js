@@ -1,7 +1,11 @@
 import styled from "styled-components";
 
-import Icon from "@components/icon";
-import FilmCardBackgroundSmall from "@assets/icons/film-card-background-small.svg";
+import ANewHopeCard from "@assets/images/a-new-hope-card.jpeg";
+import TheEmpireStrikesBackCard from "@assets/images/the-empire-strikes-back-card.jpeg";
+import ReturnOfTheJediCard from "@assets/images/return-of-the-jedi-card.jpeg";
+import ThePhantomMenaceCard from "@assets/images/the-phantom-menace-card.jpg";
+import AttackOfTheClonesCover from "@assets/images/attack-of-the-clones-card.jpg";
+import RevengeOfTheSithCover from "@assets/images/revenge-of-the-sith-card.jpeg";
 
 export const Wrap = styled.div`
   display: flex;
@@ -33,7 +37,35 @@ export const FilmWrap = styled.div`
   }
 `;
 
-export const FilmImage = styled(Icon).attrs({ src: FilmCardBackgroundSmall })``;
+const getFilmImage = (imageId) => {
+  switch (imageId) {
+    case "1":
+      return ANewHopeCard;
+    case "2":
+      return TheEmpireStrikesBackCard;
+    case "3":
+      return ReturnOfTheJediCard;
+    case "4":
+      return ThePhantomMenaceCard;
+    case "5":
+      return AttackOfTheClonesCover;
+    case "6":
+      return RevengeOfTheSithCover;
+    default:
+      return;
+  }
+};
+
+export const FilmImage = styled.div`
+  width: 6.25em;
+  height: 5em;
+  background: ${({ imageId }) => `url(${getFilmImage(imageId)})`};
+  background-size: cover;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  border-radius: 1em;
+  margin-bottom: 0.5em;
+`;
 
 export const Title = styled.h4`
   font-weight: ${({ theme: { font } }) => font.weight.medium};
