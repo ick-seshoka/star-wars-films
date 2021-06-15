@@ -18,7 +18,7 @@ const SearchHistoryFilm = ({ id, title }) => {
 
   return (
     <FilmWrap onClick={redirectToFilm}>
-      <FilmImage />
+      <FilmImage imageId={id} />
       <Title>{title}</Title>
     </FilmWrap>
   );

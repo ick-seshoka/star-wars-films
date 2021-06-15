@@ -16,10 +16,9 @@ const FilmDetails = () => {
   const [filmDetails, setFilmsDetails] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const id = query.get("id");
 
   useEffect(() => {
-    const id = query.get("id");
-
     axios(filmDetailsConfig(id))
       .then(({ data }) => {
         setFilmsDetails({ id, ...data });
@@ -31,7 +30,7 @@ const FilmDetails = () => {
   }, []);
 
   return (
-    <BackgroundWrap>
+    <BackgroundWrap imageId={id}>
       <Container>
         <Header />
         {filmDetails && <Details details={filmDetails} />}

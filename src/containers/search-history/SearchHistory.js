@@ -16,7 +16,7 @@ const SearchHistory = () => {
 
   return (
     <Wrap>
-      <HistoryLabel>Your previously searched for</HistoryLabel>
+      <HistoryLabel>You previously searched for</HistoryLabel>
       <Container>{filmItems}</Container>;
     </Wrap>
   );

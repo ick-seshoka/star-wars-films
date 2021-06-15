@@ -63,9 +63,3 @@ export const Author = styled.div`
   padding: 0.05em 0.5em;
   margin-right: 0.5em;
 `;
-
-export const DateInfo = styled.div`
-  font-size: ${({ theme: { font } }) => font.size.smallLabel};
-  letter-spacing: 0.05em;
-  color: ${({ theme: { colors } }) => colors.text.green};
-`;

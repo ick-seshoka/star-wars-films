@@ -1,5 +1,6 @@
 :root {
   --gray: #c4c4c4;
+  --black: #000000;
 }
 
 body {
@@ -7,6 +8,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 16px;
+  background-color: var(--black);
 }
 
 * {
