@@ -77,7 +77,7 @@ const Search = () => {
           error={error}
         />
         <Status>
-          {loading && <Loader />}
+          {loading && <Loader title="Searching" />}
           {isError && <Error>{error}</Error>}
           {noFilms && (
             <EmptyFilms>{`no film(s) with name ${search}`}</EmptyFilms>
