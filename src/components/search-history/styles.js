@@ -30,10 +30,12 @@ export const FilmWrap = styled.div`
   transform: scale(1);
   width: 6.5em;
   margin-right: 0.8em;
+  opacity: 0.7;
 
   &:hover {
     cursor: pointer;
     transform: scale(1.15);
+    opacity: 1;
   }
 `;
 
@@ -79,7 +81,7 @@ export const HistoryLabel = styled.div`
   font-size: ${({ theme: { font } }) => font.size.tinyTitle};
   text-align: center;
   color: ${({ theme: { colors } }) => colors.text.gray};
-  border-bottom: 1px solid ${({ theme: { colors } }) => colors.background.gray};
   font-weight: 700;
   padding-bottom: 0.5em;
+  opacity: 0.7;
 `;

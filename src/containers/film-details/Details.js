@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 
 import { SearchHistoryContext } from "@contexts/search-history";
 import { formatDate } from "@helpers";
+import Skeleton from "./Skeleton";
 
 import {
   Author,
@@ -15,7 +16,7 @@ import {
   Wrap,
 } from "./styles";
 
-const Details = ({ details }) => {
+const Details = ({ details, loading }) => {
   const { addFilmToSearchHistory } = useContext(SearchHistoryContext);
 
   const {
@@ -26,11 +27,13 @@ const Details = ({ details }) => {
     director,
     producer,
     release_date,
-  } = details;
+  } = details || {};
 
   useEffect(() => {
-    addFilmToSearchHistory({ id, title });
-  }, []);
+    id && title && addFilmToSearchHistory({ id, title });
+  }, [id, title]);
+
+  if (loading) return <Skeleton />;
 
   return (
     <DetailsWrap>
@@ -52,10 +55,12 @@ const Details = ({ details }) => {
 
 Details.defualtProps = {
   detials: {},
+  loading: false,
 };
 
 Details.defualtProps = {
   detials: PropTypes.object.isRequired,
+  loading: PropTypes.bool.isRequired,
 };
 
 export default Details;

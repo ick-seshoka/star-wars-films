@@ -7,7 +7,7 @@ import Header from "@components/header";
 import SearchInput from "@components/search-input";
 import Loader from "@components/loader";
 import Films from "./films";
-import SearchHistory from "@containers/search-history";
+import SearchHistory from "@components/search-history";
 
 import { Container, Status, Error, EmptyFilms, FilmsCount } from "./styles";
 
@@ -26,9 +26,9 @@ const Search = () => {
       mounted.current = true;
     } else {
       if (search !== "") {
-        setLoading(true);
         setFilms(null);
         searchInterval = setTimeout(() => {
+          setLoading(true);
           axios(searchConfig(search, request.token))
             .then(({ data: { results } }) => {
               setFilms(results);
@@ -37,7 +37,7 @@ const Search = () => {
               if (axios.isCancel(error)) {
                 return;
               } else {
-                setError("Something went wrong:(, please try again");
+                setError("Something went wrong :( please try again");
                 logger(error);
               }
             })
@@ -77,7 +77,7 @@ const Search = () => {
           error={error}
         />
         <Status>
-          {loading && <Loader />}
+          {loading && <Loader title="Searching" />}
           {isError && <Error>{error}</Error>}
           {noFilms && (
             <EmptyFilms>{`no film(s) with name ${search}`}</EmptyFilms>

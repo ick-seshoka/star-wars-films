@@ -5,7 +5,7 @@ import { axios, logger } from "@helpers";
 import { filmDetailsConfig } from "@api/film-details";
 import BackgroundWrap from "@components/background-wrap";
 import Header from "@components/header";
-import Details from "./Detials";
+import Details from "./Details";
 
 import { Container } from "./styles";
 
@@ -19,6 +19,7 @@ const FilmDetails = () => {
   const id = query.get("id");
 
   useEffect(() => {
+    setLoading(true);
     axios(filmDetailsConfig(id))
       .then(({ data }) => {
         setFilmsDetails({ id, ...data });
@@ -26,6 +27,9 @@ const FilmDetails = () => {
       .catch((error) => {
         setError("Something went wrong");
         logger(error);
+      })
+      .finally(() => {
+        setLoading(false);
       });
   }, []);
 
@@ -33,7 +37,7 @@ const FilmDetails = () => {
     <BackgroundWrap imageId={id}>
       <Container>
         <Header />
-        {filmDetails && <Details details={filmDetails} />}
+        <Details details={filmDetails} loading={loading} />
       </Container>
     </BackgroundWrap>
   );
