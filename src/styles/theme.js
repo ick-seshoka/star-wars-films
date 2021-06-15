@@ -14,6 +14,10 @@ export const theme = {
       red: "#EF9A9A",
       white: "#F5F5F5",
     },
+    skeleton: {
+      color: "rgba(229, 229, 229, 0.25)",
+      highlight: "rgba(229, 229, 229, 0.15)",
+    },
   },
   font: {
     size: {
