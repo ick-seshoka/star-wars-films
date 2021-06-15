@@ -5,7 +5,7 @@ import { axios, logger } from "@helpers";
 import { filmDetailsConfig } from "@api/film-details";
 import BackgroundWrap from "@components/background-wrap";
 import Header from "@components/header";
-import Details from "./Detials";
+import Details from "./Details";
 
 import { Container } from "./styles";
 

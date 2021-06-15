@@ -37,7 +37,7 @@ const Search = () => {
               if (axios.isCancel(error)) {
                 return;
               } else {
-                setError("Something went wrong:(, please try again");
+                setError("Something went wrong :( please try again");
                 logger(error);
               }
             })
