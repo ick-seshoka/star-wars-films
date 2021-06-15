@@ -26,9 +26,9 @@ const Search = () => {
       mounted.current = true;
     } else {
       if (search !== "") {
-        setLoading(true);
         setFilms(null);
         searchInterval = setTimeout(() => {
+          setLoading(true);
           axios(searchConfig(search, request.token))
             .then(({ data: { results } }) => {
               setFilms(results);
