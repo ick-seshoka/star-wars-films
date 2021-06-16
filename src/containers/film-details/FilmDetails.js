@@ -37,7 +37,7 @@ const FilmDetails = () => {
     <BackgroundWrap imageId={id}>
       <Container>
         <Header />
-        <Details details={filmDetails} loading={loading} />
+        {<Details details={filmDetails} loading={loading} error={error} />}
       </Container>
     </BackgroundWrap>
   );
