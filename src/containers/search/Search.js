@@ -26,7 +26,7 @@ const Search = () => {
     if (!mounted.current) {
       mounted.current = true;
     } else {
-      if (debouncedSearch !== "") {
+      if (debouncedSearch !== "" && error === "") {
         setLoading(true);
         searchFilms(debouncedSearch, request.token)
           .then((films) => {
@@ -50,6 +50,11 @@ const Search = () => {
 
   const inputChange = (e) => {
     const { value } = e.target;
+    if (value.length >= 50) {
+      setError("Search value too long, should be less than 50 characters");
+    } else {
+      setError("");
+    }
     setSearch(value);
   };
 
