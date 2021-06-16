@@ -1,10 +1,18 @@
-import React, { useEffect, useContext } from "react";
+import React, { useEffect, useContext, memo } from "react";
 import PropTypes from "prop-types";
 
 import { SearchHistoryContext } from "@contexts/search-history";
 import { formatDate } from "@helpers";
 import { routes } from "@enums";
 import Skeleton from "./Skeleton";
+
+const ErrorMessage = memo(() => (
+  <ErrorMessage>
+    Something went wrong trying to load the page :( click{" "}
+    <SearchLink to={routes.home}>here</SearchLink> to search for a film or
+    reload the page if that does not work
+  </ErrorMessage>
+));
 
 import {
   Author,
@@ -15,7 +23,6 @@ import {
   ReaseDate,
   Title,
   Wrap,
-  ErrorMessage,
   SearchLink,
 } from "./styles";
 
@@ -38,14 +45,7 @@ const Details = ({ details, loading, error }) => {
 
   if (loading) return <Skeleton />;
 
-  if (error)
-    return (
-      <ErrorMessage>
-        Something went wrong trying to load the page :( click{" "}
-        <SearchLink to={routes.home}>here</SearchLink> to search for a film or
-        reload the page if that does not work
-      </ErrorMessage>
-    );
+  if (error) return <ErrorMessage />;
 
   return (
     <DetailsWrap>

@@ -1,10 +1,10 @@
-import React from "react";
+import React, { memo } from "react";
 
 import { routes } from "@enums";
 
 import { Container, Logo, LogoIcon } from "./styles";
 
-const Header = () => {
+const Header = memo(() => {
   return (
     <Container>
       <Logo to={routes.home}>
@@ -12,6 +12,6 @@ const Header = () => {
       </Logo>
     </Container>
   );
-};
+});
 
 export default Header;
