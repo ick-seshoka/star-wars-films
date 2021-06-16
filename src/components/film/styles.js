@@ -6,6 +6,7 @@ import ReturnOfTheJediCard from "@assets/images/return-of-the-jedi-card.jpeg";
 import ThePhantomMenaceCard from "@assets/images/the-phantom-menace-card.jpg";
 import AttackOfTheClonesCover from "@assets/images/attack-of-the-clones-card.jpg";
 import RevengeOfTheSithCover from "@assets/images/revenge-of-the-sith-card.jpeg";
+import FilmCardBackground from "@assets/images/film-card-background.png";
 
 export const Container = styled.div`
   display: flex;
@@ -38,7 +39,7 @@ const getFilmImage = (imageId) => {
     case "6":
       return RevengeOfTheSithCover;
     default:
-      return;
+      return FilmCardBackground;
   }
 };
 
