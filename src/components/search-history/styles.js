@@ -6,6 +6,7 @@ import ReturnOfTheJediCard from "@assets/images/return-of-the-jedi-card.jpeg";
 import ThePhantomMenaceCard from "@assets/images/the-phantom-menace-card.jpg";
 import AttackOfTheClonesCover from "@assets/images/attack-of-the-clones-card.jpg";
 import RevengeOfTheSithCover from "@assets/images/revenge-of-the-sith-card.jpeg";
+import { useLazyBackground } from "@hooks";
 
 export const Wrap = styled.div`
   display: flex;
@@ -61,7 +62,8 @@ const getFilmImage = (imageId) => {
 export const FilmImage = styled.div`
   width: 6.25em;
   height: 5em;
-  background: ${({ imageId }) => `url(${getFilmImage(imageId)})`};
+  background: ${({ imageId }) =>
+    `url(${useLazyBackground(getFilmImage(imageId) || "")})`};
   background-size: cover;
   background-position: 0 0;
   background-repeat: no-repeat;

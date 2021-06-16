@@ -11,6 +11,7 @@ module.exports = {
       "@contexts": path.resolve(__dirname, "./src/contexts"),
       "@enums": path.resolve(__dirname, "./src/enums"),
       "@helpers": path.resolve(__dirname, "./src/helpers"),
+      "@hooks": path.resolve(__dirname, "./src/hooks"),
       "@modules": path.resolve(__dirname, "./src/modules"),
       "@styles": path.resolve(__dirname, "./src/styles"),
     },
