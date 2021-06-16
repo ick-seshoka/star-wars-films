@@ -24,7 +24,8 @@ export const InputWrap = styled.div`
   display: grid;
   grid-template-columns: auto 5em;
   height: 3.5em;
-  border: 1px solid ${({ theme: { colors } }) => colors.background.gray};
+  border: 1px solid
+    ${({ theme: { colors } }) => colors.background.transparentGray};
   border-radius: 2em;
   padding: 0.2em;
 `;
@@ -40,7 +41,7 @@ export const Input = styled.input`
   font-size: ${({ theme: { font } }) => font.size.text};
 
   ::placeholder {
-    color: ${({ theme: { colors } }) => colors.text.white};
+    color: ${({ theme: { colors } }) => colors.background.transparentGray};
   }
 `;
 

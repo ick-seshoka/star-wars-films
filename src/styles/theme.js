@@ -9,7 +9,7 @@ export const theme = {
     },
     background: {
       gray: "#C4C4C4",
-      transparentGray: "rgba(196, 196, 196 , 0.35);",
+      transparentGray: "rgba(196, 196, 196 , 0.65);",
       filter:
         "linear-gradient(180deg, rgba(0, 0, 0, 0.6) 10%, rgba(0, 0, 0, 1) 100%)",
       red: "#EF9A9A",
