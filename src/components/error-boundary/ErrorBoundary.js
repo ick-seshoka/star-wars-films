@@ -23,7 +23,8 @@ class ErrorBoundary extends Component {
   }
 
   componentDidCatch(error, errorInfo) {
-    logger(error, errorInfo);
+    logger(error);
+    logger(errorInfo);
   }
 
   render() {
