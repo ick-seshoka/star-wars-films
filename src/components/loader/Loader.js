@@ -1,9 +1,9 @@
-import React from "react";
+import React, { memo } from "react";
 import PropTypes from "prop-types";
 
 import { Container, Title, Dots, LightSaber } from "./styles";
 
-const Loader = ({ title }) => (
+const Loader = memo(({ title }) => (
   <Container>
     <Title>
       {title}
@@ -11,7 +11,7 @@ const Loader = ({ title }) => (
     </Title>
     <LightSaber />
   </Container>
-);
+));
 
 Loader.defaultProps = {
   title: "Loading",

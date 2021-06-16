@@ -5,6 +5,7 @@ export const theme = {
       red: "#EF9A9A",
       gray: "#F5F5F5",
       green: "#4CAF50",
+      blue: "#2196F3",
     },
     background: {
       gray: "#C4C4C4",
@@ -13,6 +14,7 @@ export const theme = {
         "linear-gradient(180deg, rgba(0, 0, 0, 0.6) 10%, rgba(0, 0, 0, 1) 100%)",
       red: "#EF9A9A",
       white: "#F5F5F5",
+      black: "#000000",
     },
     skeleton: {
       color: "rgba(229, 229, 229, 0.25)",

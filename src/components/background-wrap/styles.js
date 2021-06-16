@@ -7,6 +7,7 @@ import ThePhantomMenaceCover from "@assets/images/the-phantom-menace-cover.jpg";
 import AttackOfTheClonesCover from "@assets/images/attack-of-the-clones-cover.jpg";
 import RevengeOfTheSithCover from "@assets/images/revenge-of-the-sith-cover.jpeg";
 import StarWarsCover from "@assets/images/star-wars-cover.jpg";
+import { useLazyBackground } from "@/hooks";
 
 const getBackgroundImage = (imageId = 0) => {
   switch (imageId) {
@@ -24,7 +25,6 @@ const getBackgroundImage = (imageId = 0) => {
       return AttackOfTheClonesCover;
     case "6":
       return RevengeOfTheSithCover;
-
     default:
       return;
   }
@@ -46,7 +46,8 @@ export const Container = styled.div`
     height: 100vh;
     background-color: ${({ theme: { colors } }) => colors.background.gray};
     background: ${({ theme: { colors } }) => colors.background.filter},
-      ${({ imageId }) => `url(${getBackgroundImage(imageId)})`};
+      ${({ imageId }) =>
+        `url(${useLazyBackground(getBackgroundImage(imageId) || "")})`};
     background-size: cover;
     background-repeat: no-repeat;
     z-index: -1;

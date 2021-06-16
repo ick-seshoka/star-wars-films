@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 import Skeleton, {
   SkeletonTheme as SkeletonThemeSource,
@@ -104,4 +105,14 @@ export const Author = styled.div`
   color: ${({ theme: { colors } }) => colors.text.gray};
   padding: 0.05em 0.5em;
   margin-right: 0.5em;
+`;
+
+export const ErrorMessage = styled.div`
+  text-align: center;
+  color: ${({ theme: { colors } }) => colors.text.red};
+  max-width: 20em;
+`;
+
+export const SearchLink = styled(Link)`
+  color: ${({ theme: { colors } }) => colors.text.blue};
 `;

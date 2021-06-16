@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 
 import {
   DetailsWrap,
@@ -9,7 +9,7 @@ import {
   SkeletonTheme,
 } from "./styles";
 
-const Skeleton = () => (
+const Skeleton = memo(() => (
   <SkeletonTheme>
     <DetailsWrap>
       <TitleSkeleton />
@@ -35,6 +35,6 @@ const Skeleton = () => (
       <InfoSkeleton />
     </DetailsWrap>
   </SkeletonTheme>
-);
+));
 
 export default Skeleton;
