@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 
-import { axios } from "@helpers";
+import { axios, trimString } from "@helpers";
 import { useDebounceValue } from "@hooks";
 import { searchFilms } from "@modules/search";
 import BackgroundWrap from "@components/background-wrap";
@@ -17,9 +17,8 @@ const Search = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [films, setFilms] = useState(null);
-  const [typing, setTyping] = useState(false);
   const mounted = useRef();
-  const debouncedSearch = useDebounceValue(search, 500);
+  const [debouncedSearch, typing] = useDebounceValue(search, 500);
 
   useEffect(() => {
     const request = axios.CancelToken.source();
@@ -28,7 +27,6 @@ const Search = () => {
       mounted.current = true;
     } else {
       if (debouncedSearch !== "") {
-        setTyping(false);
         setLoading(true);
         searchFilms(debouncedSearch, request.token)
           .then((films) => {
@@ -53,13 +51,16 @@ const Search = () => {
   const inputChange = (e) => {
     const { value } = e.target;
     setSearch(value);
-    setTyping(true);
   };
 
   const isError = !loading && error && error !== "";
   const filmsCount = films?.length;
   const noFilms =
-    filmsCount === 0 && !loading && !error && search !== "" && !typing;
+    filmsCount === 0 &&
+    !loading &&
+    !error &&
+    trimString(search) !== "" &&
+    !typing;
   const showFilms = filmsCount > 0 && !loading && !typing;
 
   return (
