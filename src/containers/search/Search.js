@@ -1,7 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 
-import { axios, logger } from "@helpers";
-import { searchConfig } from "@api/search";
+import { axios } from "@helpers";
+import { useDebounceValue } from "@hooks";
+import { searchFilms } from "@modules/search";
 import BackgroundWrap from "@components/background-wrap";
 import Header from "@components/header";
 import SearchInput from "@components/search-input";
@@ -16,55 +17,50 @@ const Search = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [films, setFilms] = useState(null);
+  const [typing, setTyping] = useState(false);
   const mounted = useRef();
+  const debouncedSearch = useDebounceValue(search, 500);
 
   useEffect(() => {
-    let searchInterval = null;
-    let request = axios.CancelToken.source();
+    const request = axios.CancelToken.source();
 
     if (!mounted.current) {
       mounted.current = true;
     } else {
-      if (search !== "") {
-        setFilms(null);
-        searchInterval = setTimeout(() => {
-          setLoading(true);
-          axios(searchConfig(search, request.token))
-            .then(({ data: { results } }) => {
-              setFilms(results);
-            })
-            .catch((error) => {
-              if (axios.isCancel(error)) {
-                return;
-              } else {
-                setError("Something went wrong :( please try again");
-                logger(error);
-              }
-            })
-            .finally(() => {
-              setLoading(false);
-            });
-        }, 500);
+      if (debouncedSearch !== "") {
+        setTyping(false);
+        setLoading(true);
+        searchFilms(debouncedSearch, request.token)
+          .then((films) => {
+            setFilms(films);
+          })
+          .catch((error) => {
+            setError(error);
+          })
+          .finally(() => {
+            setLoading(false);
+          });
       } else {
-        setLoading(false);
-        setFilms(null);
+        setFilms([]);
       }
     }
 
     return () => {
-      clearInterval(searchInterval);
       request.cancel("cancel pending request");
     };
-  }, [search]);
+  }, [debouncedSearch]);
 
   const inputChange = (e) => {
     const { value } = e.target;
     setSearch(value);
+    setTyping(true);
   };
 
   const isError = !loading && error && error !== "";
   const filmsCount = films?.length;
-  const noFilms = filmsCount === 0 && !loading && !error && search !== "";
+  const noFilms =
+    filmsCount === 0 && !loading && !error && search !== "" && !typing;
+  const showFilms = filmsCount > 0 && !loading && !typing;
 
   return (
     <BackgroundWrap>
@@ -82,13 +78,13 @@ const Search = () => {
           {noFilms && (
             <EmptyFilms>{`no film(s) with name ${search}`}</EmptyFilms>
           )}
-          {filmsCount > 0 && (
+          {showFilms && (
             <FilmsCount>
               {`${filmsCount} movie${filmsCount > 1 ? "s" : ""} found`}
             </FilmsCount>
           )}
         </Status>
-        <Films films={films} />
+        {showFilms && <Films films={films} />}
         <SearchHistory />
       </Container>
     </BackgroundWrap>

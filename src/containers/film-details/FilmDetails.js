@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 
-import { axios, logger } from "@helpers";
-import { filmDetailsConfig } from "@api/film-details";
+import { fetchFilmDetails } from "@modules/film-details";
+import { axios } from "@helpers";
 import BackgroundWrap from "@components/background-wrap";
 import Header from "@components/header";
 import Details from "./Details";
@@ -19,25 +19,32 @@ const FilmDetails = () => {
   const id = query.get("id");
 
   useEffect(() => {
+    const request = axios.CancelToken.source();
     setLoading(true);
-    axios(filmDetailsConfig(id))
-      .then(({ data }) => {
-        setFilmsDetails({ id, ...data });
+
+    fetchFilmDetails(id, request.token)
+      .then((details) => {
+        setFilmsDetails(details);
       })
       .catch((error) => {
-        setError("Something went wrong");
-        logger(error);
+        setError(error);
       })
       .finally(() => {
         setLoading(false);
       });
+
+    return () => {
+      request.cancel("cancel pending request");
+    };
   }, []);
+
+  const details = { id, ...filmDetails };
 
   return (
     <BackgroundWrap imageId={id}>
       <Container>
         <Header />
-        {<Details details={filmDetails} loading={loading} error={error} />}
+        {<Details details={details} loading={loading} error={error} />}
       </Container>
     </BackgroundWrap>
   );
