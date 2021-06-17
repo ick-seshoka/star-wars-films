@@ -1,5 +1,6 @@
 import styled, { keyframes } from "styled-components";
 
+import { breakpoints } from "@styles";
 import Icon from "@components/icon";
 import LightsaberIcon from "@assets/icons/lightsaber-icon.svg";
 
@@ -11,12 +12,22 @@ export const Container = styled.div`
   color: ${({ theme: { colors } }) => colors.text.white};
 `;
 
-export const LightSaber = styled(Icon).attrs({ src: LightsaberIcon })``;
+export const LightSaber = styled(Icon).attrs({ src: LightsaberIcon })`
+  @media only screen and (max-width: ${breakpoints.mobile}) {
+    svg {
+      width: 8em;
+    }
+  }
+`;
 
 export const Title = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
+
+  @media only screen and (max-width: ${breakpoints.mobile}) {
+    font-size: ${({ theme: { font } }) => font.size.mobile.label};
+  } ;
 `;
 
 const FlashingDots = keyframes`

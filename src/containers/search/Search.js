@@ -78,7 +78,7 @@ const Search = () => {
           loading={loading}
           error={error}
         />
-        {/* <Status>
+        <Status>
           {loading && <Loader title="Searching" />}
           {isError && <Error>{error}</Error>}
           {noFilms && (
@@ -90,7 +90,7 @@ const Search = () => {
             </FilmsCount>
           )}
         </Status>
-        {showFilms && <Films films={films} />}
+        {/* {showFilms && <Films films={films} />}
         <SearchHistory /> */}
       </Container>
     </BackgroundWrap>

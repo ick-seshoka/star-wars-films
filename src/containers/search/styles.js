@@ -18,6 +18,10 @@ const statusTextStyles = css`
   text-align: center;
   margin-top: 0.5em;
   color: ${({ theme: { colors } }) => colors.text.gray};
+
+  @media only screen and (max-width: ${breakpoints.mobile}) {
+    font-size: ${({ theme: { font } }) => font.size.mobile.label};
+  }
 `;
 
 export const Status = styled.div`

@@ -31,7 +31,7 @@ export const theme = {
       tinyTitle: "0.85em",
 
       mobile: {
-        label: "0.75em",
+        label: "0.85em",
         title: "1.75em",
         text: "1em",
         smallTitle: "1.25em",
