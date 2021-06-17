@@ -72,7 +72,7 @@ const Search = () => {
     <BackgroundWrap>
       <Container>
         <Header />
-        <SearchInput
+        {/* <SearchInput
           setSearch={inputChange}
           search={search}
           loading={loading}
@@ -91,7 +91,7 @@ const Search = () => {
           )}
         </Status>
         {showFilms && <Films films={films} />}
-        <SearchHistory />
+        <SearchHistory /> */}
       </Container>
     </BackgroundWrap>
   );

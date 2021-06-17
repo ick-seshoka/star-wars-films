@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import { breakpoints } from "@styles";
 
 export const Container = styled.div`
   display: grid;
@@ -6,6 +7,10 @@ export const Container = styled.div`
   width: 90em;
   margin: 0 auto;
   padding-bottom: 8em;
+
+  @media only screen and (max-width: ${breakpoints.mobile}) {
+    width: 90vw;
+  } ;
 `;
 
 const statusTextStyles = css`
