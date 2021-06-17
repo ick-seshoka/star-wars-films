@@ -90,8 +90,8 @@ const Search = () => {
             </FilmsCount>
           )}
         </Status>
-        {/* {showFilms && <Films films={films} />}
-        <SearchHistory /> */}
+        {showFilms && <Films films={films} />}
+        {/* <SearchHistory /> */}
       </Container>
     </BackgroundWrap>
   );

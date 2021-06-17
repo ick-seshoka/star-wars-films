@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import { useLazyBackground } from "@hooks";
+import { breakpoints } from "@styles";
 import ANewHopeCard from "@assets/images/a-new-hope-card.jpeg";
 import TheEmpireStrikesBackCard from "@assets/images/the-empire-strikes-back-card.jpeg";
 import ReturnOfTheJediCard from "@assets/images/return-of-the-jedi-card.jpeg";
@@ -7,7 +9,6 @@ import ThePhantomMenaceCard from "@assets/images/the-phantom-menace-card.jpg";
 import AttackOfTheClonesCover from "@assets/images/attack-of-the-clones-card.jpg";
 import RevengeOfTheSithCover from "@assets/images/revenge-of-the-sith-card.jpeg";
 import FilmCardBackground from "@assets/images/film-card-background.png";
-import { useLazyBackground } from "@hooks";
 
 export const Container = styled.div`
   display: flex;
@@ -23,6 +24,11 @@ export const Container = styled.div`
     cursor: pointer;
     transform: scale(1.15);
   }
+
+  @media only screen and (max-width: ${breakpoints.mobile}) {
+    width: 7em;
+    height: 10em;
+  } ;
 `;
 
 const getFilmImage = (imageId) => {
@@ -55,6 +61,11 @@ export const FilmImage = styled.div`
   background-position: 0 0;
   border-radius: 1em;
   margin-bottom: 0.5em;
+
+  @media only screen and (max-width: ${breakpoints.mobile}) {
+    width: 100%;
+    height: 6.5em;
+  } ;
 `;
 
 export const Title = styled.h4`
@@ -62,4 +73,8 @@ export const Title = styled.h4`
   font-size: ${({ theme: { font } }) => font.size.smallTitle};
   text-align: center;
   color: ${({ theme: { colors } }) => colors.text.gray};
+
+  @media only screen and (max-width: ${breakpoints.mobile}) {
+    font-size: ${({ theme: { font } }) => font.size.mobile.smallTitle};
+  }
 `;

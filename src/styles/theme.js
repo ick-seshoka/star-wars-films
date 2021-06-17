@@ -34,7 +34,7 @@ export const theme = {
         label: "0.85em",
         title: "1.75em",
         text: "1em",
-        smallTitle: "1.25em",
+        smallTitle: "0.925em",
         largeTitle: "2.85em",
         tinyTitle: "0.85em",
       },

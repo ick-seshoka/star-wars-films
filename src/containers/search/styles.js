@@ -48,4 +48,10 @@ export const FilmsContainer = styled.div`
   grid-template-columns: repeat(3, auto);
   grid-template-rows: repeat(2, auto);
   justify-self: center;
+
+  @media only screen and (max-width: ${breakpoints.mobile}) {
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(3, auto);
+    grid-row-gap: 1em;
+  }
 `;
