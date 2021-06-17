@@ -72,13 +72,13 @@ const Search = () => {
     <BackgroundWrap>
       <Container>
         <Header />
-        {/* <SearchInput
+        <SearchInput
           setSearch={inputChange}
           search={search}
           loading={loading}
           error={error}
         />
-        <Status>
+        {/* <Status>
           {loading && <Loader title="Searching" />}
           {isError && <Error>{error}</Error>}
           {noFilms && (

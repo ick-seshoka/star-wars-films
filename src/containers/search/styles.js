@@ -10,6 +10,7 @@ export const Container = styled.div`
 
   @media only screen and (max-width: ${breakpoints.mobile}) {
     width: 90vw;
+    justify-content: center;
   } ;
 `;
 

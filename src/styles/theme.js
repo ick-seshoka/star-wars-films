@@ -29,6 +29,15 @@ export const theme = {
       smallTitle: "1.25em",
       largeTitle: "2.85em",
       tinyTitle: "0.85em",
+
+      mobile: {
+        label: "0.75em",
+        title: "1.75em",
+        text: "1em",
+        smallTitle: "1.25em",
+        largeTitle: "2.85em",
+        tinyTitle: "0.85em",
+      },
     },
     weight: {
       light: "300",
@@ -40,5 +49,8 @@ export const theme = {
   },
   spacing: {
     text: { letter: "0.05em" },
+    mobile: {
+      letter: "0.02em",
+    },
   },
 };
