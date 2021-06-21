@@ -1,0 +1,2 @@
+(this["webpackJsonpstar-wars-films"]=this["webpackJsonpstar-wars-films"]||[]).push([[6],{103:function(t,s,n){"use strict";n.r(s),n.d(s,"default",(function(){return u}));var e,r=n(0),c=n(6),a=n(5).c.div(e||(e=Object(c.a)([""]))),i=n(1),u=Object(r.memo)((function(){return Object(i.jsx)(a,{children:"Page not found"})}))}}]);
+//# sourceMappingURL=6.f4ae0f2e.chunk.js.map
