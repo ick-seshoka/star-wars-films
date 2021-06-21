@@ -41,7 +41,7 @@ export const InputWrap = styled.div`
 
   @media only screen and (max-width: ${breakpoints.mobile}) {
     grid-template-columns: auto 3.6em;
-    height: 2.5em;
+    height: 2.6em;
   } ;
 `;
 
@@ -61,7 +61,7 @@ export const Input = styled.input`
 
   @media only screen and (max-width: ${breakpoints.mobile}) {
     &,
-    ::placeholer {
+    ::placeholder {
       width: 100%;
       font-size: ${({ theme: { font } }) => font.size.mobile.text};
     }

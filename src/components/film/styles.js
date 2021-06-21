@@ -31,7 +31,7 @@ export const Container = styled.div`
     margin: 0em 0.9em;
   }
 
-  @media only screen and (max-width: ${breakpoints.desktop}) {
+  @media only screen and (min-width: ${breakpoints.mobile}) and (max-width: ${breakpoints.desktop}) {
     width: 12.5em;
     height: 15em;
   }
