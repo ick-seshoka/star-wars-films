@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import { breakpoints } from "@styles";
+
 import { Link } from "react-router-dom";
 
 export const Container = styled.div`
@@ -16,6 +18,10 @@ export const ErrorMessage = styled.div`
   text-align: center;
   color: ${({ theme: { colors } }) => colors.text.red};
   max-width: 20em;
+
+  @media only screen and (max-width: ${breakpoints.mobile}) {
+    font-size: ${({ theme: { font } }) => font.size.mobile.label};
+  }
 `;
 
 export const SearchLink = styled(Link)`

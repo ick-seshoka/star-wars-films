@@ -1,20 +1,23 @@
 import styled from "styled-components";
 
+import { useLazyBackground } from "@hooks";
+import { breakpoints } from "@styles";
 import ANewHopeCard from "@assets/images/a-new-hope-card.jpeg";
 import TheEmpireStrikesBackCard from "@assets/images/the-empire-strikes-back-card.jpeg";
 import ReturnOfTheJediCard from "@assets/images/return-of-the-jedi-card.jpeg";
 import ThePhantomMenaceCard from "@assets/images/the-phantom-menace-card.jpg";
 import AttackOfTheClonesCover from "@assets/images/attack-of-the-clones-card.jpg";
 import RevengeOfTheSithCover from "@assets/images/revenge-of-the-sith-card.jpeg";
-import { useLazyBackground } from "@hooks";
 
 export const Wrap = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  min-width: 15em;
   margin: 0 auto;
   margin-top: 3.5em;
+
+  @media only screen and (max-width: ${breakpoints.mobile}) {
+    width: 100%;
+  }
 `;
 
 export const Container = styled.div`
@@ -22,6 +25,13 @@ export const Container = styled.div`
   flex-direction: row;
   justify-content: center;
   margin-top: 0.7em;
+
+  @media only screen and (max-width: ${breakpoints.mobile}) {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    align-self: center;
+    grid-gap: 1em;
+  }
 `;
 
 export const FilmWrap = styled.div`
@@ -37,6 +47,11 @@ export const FilmWrap = styled.div`
     cursor: pointer;
     transform: scale(1.15);
     opacity: 1;
+  }
+
+  @media only screen and (max-width: ${breakpoints.mobile}) {
+    margin-right: 0;
+    width: 100%;
   }
 `;
 
@@ -69,6 +84,10 @@ export const FilmImage = styled.div`
   background-repeat: no-repeat;
   border-radius: 1em;
   margin-bottom: 0.5em;
+
+  @media only screen and (max-width: ${breakpoints.mobile}) {
+    width: 5.25em;
+  }
 `;
 
 export const Title = styled.h4`
@@ -76,6 +95,10 @@ export const Title = styled.h4`
   font-size: ${({ theme: { font } }) => font.size.tinyTitle};
   text-align: center;
   color: ${({ theme: { colors } }) => colors.text.gray};
+
+  @media only screen and (max-width: ${breakpoints.mobile}) {
+    font-size: ${({ theme: { font } }) => font.size.mobile.tinyTitle};
+  }
 `;
 
 export const HistoryLabel = styled.div`
@@ -86,4 +109,8 @@ export const HistoryLabel = styled.div`
   font-weight: 700;
   padding-bottom: 0.5em;
   opacity: 0.7;
+
+  @media only screen and (max-width: ${breakpoints.mobile}) {
+    font-size: ${({ theme: { font } }) => font.size.mobile.tinyTitle};
+  }
 `;

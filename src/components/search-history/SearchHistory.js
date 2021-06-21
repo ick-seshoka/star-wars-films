@@ -17,7 +17,7 @@ const SearchHistory = memo(() => {
   return (
     <Wrap>
       <HistoryLabel>You previously searched for</HistoryLabel>
-      <Container>{filmItems}</Container>;
+      <Container>{filmItems}</Container>
     </Wrap>
   );
 });

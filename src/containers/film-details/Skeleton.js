@@ -1,5 +1,7 @@
 import React, { memo } from "react";
 
+import { isMobile } from "@helpers";
+
 import {
   DetailsWrap,
   InfoSkeleton,
@@ -9,32 +11,36 @@ import {
   SkeletonTheme,
 } from "./styles";
 
-const Skeleton = memo(() => (
-  <SkeletonTheme>
-    <DetailsWrap>
-      <TitleSkeleton />
-      <InfoSkeleton />
-      <SkeletonWrap>
-        <TextSkeleton />
-        <TextSkeleton />
-        <TextSkeleton />
-        <TextSkeleton />
-      </SkeletonWrap>
-      <SkeletonWrap>
-        <TextSkeleton />
-        <TextSkeleton />
-        <TextSkeleton />
-        <TextSkeleton />
-      </SkeletonWrap>
-      <SkeletonWrap>
-        <TextSkeleton />
-        <TextSkeleton />
-        <TextSkeleton />
-        <TextSkeleton />
-      </SkeletonWrap>
-      <InfoSkeleton />
-    </DetailsWrap>
-  </SkeletonTheme>
-));
+const Skeleton = memo(() => {
+  const onMobile = isMobile();
+
+  return (
+    <SkeletonTheme>
+      <DetailsWrap>
+        <TitleSkeleton isMobile={onMobile} />
+        <InfoSkeleton isMobile={onMobile} />
+        <SkeletonWrap>
+          <TextSkeleton isMobile={onMobile} />
+          <TextSkeleton isMobile={onMobile} />
+          <TextSkeleton isMobile={onMobile} />
+          <TextSkeleton isMobile={onMobile} />
+        </SkeletonWrap>
+        <SkeletonWrap>
+          <TextSkeleton isMobile={onMobile} />
+          <TextSkeleton isMobile={onMobile} />
+          <TextSkeleton isMobile={onMobile} />
+          <TextSkeleton isMobile={onMobile} />
+        </SkeletonWrap>
+        <SkeletonWrap>
+          <TextSkeleton isMobile={onMobile} />
+          <TextSkeleton isMobile={onMobile} />
+          <TextSkeleton isMobile={onMobile} />
+          <TextSkeleton isMobile={onMobile} />
+        </SkeletonWrap>
+        <InfoSkeleton isMobile={onMobile} />
+      </DetailsWrap>
+    </SkeletonTheme>
+  );
+});
 
 export default Skeleton;

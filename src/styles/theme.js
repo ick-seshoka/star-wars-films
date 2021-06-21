@@ -9,7 +9,7 @@ export const theme = {
     },
     background: {
       gray: "#C4C4C4",
-      transparentGray: "rgba(196, 196, 196 , 0.35);",
+      transparentGray: "rgba(196, 196, 196 , 0.65);",
       filter:
         "linear-gradient(180deg, rgba(0, 0, 0, 0.6) 10%, rgba(0, 0, 0, 1) 100%)",
       red: "#EF9A9A",
@@ -29,6 +29,15 @@ export const theme = {
       smallTitle: "1.25em",
       largeTitle: "2.85em",
       tinyTitle: "0.85em",
+
+      mobile: {
+        label: "0.85em",
+        title: "1.75em",
+        text: "1em",
+        smallTitle: "0.925em",
+        largeTitle: "2.85em",
+        tinyTitle: "0.65em",
+      },
     },
     weight: {
       light: "300",
@@ -40,5 +49,8 @@ export const theme = {
   },
   spacing: {
     text: { letter: "0.05em" },
+    mobile: {
+      letter: "0.02em",
+    },
   },
 };
