@@ -20,10 +20,11 @@ import {
   EM,
   Episode,
   OpeningCrawl,
-  ReaseDate,
+  ReleaseDate,
   Title,
   Wrap,
   SearchLink,
+  Label,
 } from "./styles";
 
 const Details = ({ details, loading, error }) => {
@@ -49,12 +50,15 @@ const Details = ({ details, loading, error }) => {
 
   return (
     <DetailsWrap>
-      <Title>{`Star Wars: ${title}`}</Title>
+      <Title>
+        <Label>Star Wars: </Label>
+        {title}
+      </Title>
       <Wrap>
         <Episode>{`Episode ${episode_id}`}</Episode>
-        <ReaseDate>
+        <ReleaseDate>
           <EM>{`released: ${formatDate(release_date)}`}</EM>
-        </ReaseDate>
+        </ReleaseDate>
       </Wrap>
       <OpeningCrawl>{opening_crawl}</OpeningCrawl>
       <Wrap>
@@ -65,14 +69,14 @@ const Details = ({ details, loading, error }) => {
   );
 };
 
-Details.defualtProps = {
-  detials: {},
+Details.defaultProps = {
+  details: {},
   loading: false,
   error: "",
 };
 
-Details.defualtProps = {
-  detials: PropTypes.object.isRequired,
+Details.defaultProps = {
+  details: PropTypes.object.isRequired,
   loading: PropTypes.bool.isRequired,
   error: PropTypes.string,
 };
