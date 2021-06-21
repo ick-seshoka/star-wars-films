@@ -12,7 +12,7 @@ export const Container = styled.div`
   width: 100%;
   height: 100%;
 
-  @media only screen and (max-width: ${breakpoints.mobile}) {
+  @media only screen and (max-width: ${breakpoints.largeDesktop}) {
     justify-content: center;
   }
 `;

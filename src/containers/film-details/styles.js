@@ -8,13 +8,17 @@ import { breakpoints } from "@styles";
 
 export const Container = styled.div`
   display: grid;
-  grid-template-rows: 9.375em auto;
-  width: 90em;
+  grid-template-rows: 10.975em auto;
+  max-width: 75em;
   margin: 0 auto;
 
   @media only screen and (max-width: ${breakpoints.mobile}) {
     width: 90vw;
     align-self: center;
+  }
+
+  @media only screen and (min-width: ${breakpoints.largeDesktop}) {
+    width: 75em;
   }
 `;
 

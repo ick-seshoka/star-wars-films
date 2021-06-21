@@ -29,7 +29,12 @@ export const Container = styled.div`
     width: 7em;
     height: 10em;
     margin: 0em 0.9em;
-  } ;
+  }
+
+  @media only screen and (max-width: ${breakpoints.desktop}) {
+    width: 12.5em;
+    height: 15em;
+  }
 `;
 
 const getFilmImage = (imageId) => {

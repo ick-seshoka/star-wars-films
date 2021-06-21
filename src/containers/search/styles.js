@@ -3,15 +3,19 @@ import { breakpoints } from "@styles";
 
 export const Container = styled.div`
   display: grid;
-  grid-template-rows: 9.375em 15em 5em auto auto;
-  width: 90em;
+  grid-template-rows: 10.975em 15em 5em auto auto;
+  max-width: 75em;
   margin: 0 auto;
   padding-bottom: 8em;
 
   @media only screen and (max-width: ${breakpoints.mobile}) {
     width: 90vw;
     justify-content: center;
-  } ;
+  }
+
+  @media only screen and (min-width: ${breakpoints.largeDesktop}) {
+    width: 75em;
+  }
 `;
 
 const statusTextStyles = css`
