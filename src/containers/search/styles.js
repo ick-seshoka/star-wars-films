@@ -52,6 +52,6 @@ export const FilmsContainer = styled.div`
   @media only screen and (max-width: ${breakpoints.mobile}) {
     grid-template-columns: repeat(2, auto);
     grid-template-rows: repeat(3, auto);
-    grid-row-gap: 1em;
+    grid-row-gap: 0.5em;
   }
 `;

@@ -28,6 +28,7 @@ export const Container = styled.div`
   @media only screen and (max-width: ${breakpoints.mobile}) {
     width: 7em;
     height: 10em;
+    margin: 0em 0.9em;
   } ;
 `;
 

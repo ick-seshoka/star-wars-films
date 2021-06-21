@@ -91,7 +91,7 @@ const Search = () => {
           )}
         </Status>
         {showFilms && <Films films={films} />}
-        {/* <SearchHistory /> */}
+        <SearchHistory />
       </Container>
     </BackgroundWrap>
   );
