@@ -26,6 +26,7 @@ export const DetailsWrap = styled.div`
   @media only screen and (max-width: ${breakpoints.mobile}) {
     margin-left: 0.3em;
     width: 90vw;
+    margin-bottom: 3em;
   }
 `;
 
