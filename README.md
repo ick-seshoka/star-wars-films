@@ -28,7 +28,7 @@ or alternatively the source code can de downloaded from [this github repository]
 
 ℹ To run the project locally you must have [Node.js](https://nodejs.dev/) installed on your machine with npm (I used yarn in this project which can be installed with npm )
 
-Navigate to the project directory `cd star-wars-films`, add a `.env` file with `REACT_APP_API_BASE_URL = https://swapi.dev/api` at the root of the project directory (same level as the src folder) and run the following commands:
+Navigate to the project directory `cd star-wars-films`, add a `.env` file with `REACT_APP_API_BASE_URL = https://swapi.dev/api` at the root of the project directory (same level as the src folder) and run the following command:
 
 ```
 yarn install && yarn start
@@ -64,7 +64,6 @@ The project is structured as follows:
   - [react-responsive](https://www.npmjs.com/package/react-responsive)
   - [react-svg](https://www.npmjs.com/package/react-svg)
   - [source-map-explorer](https://www.npmjs.com/package/source-map-explorer)
-  - [moment](https://www.npmjs.com/package/moment)
   - [normalize](https://www.npmjs.com/package/normalize)
   - [prop-types](https://www.npmjs.com/package/prop-types)
   - [react-router-dom](https://www.npmjs.com/package/react-router-dom)
