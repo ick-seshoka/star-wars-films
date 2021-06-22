@@ -1,12 +1,14 @@
 # Star Wars Films
 
-###About Star Wars Films
+### About Star Wars Films
+
 A star wars film search web application idea built in [ReactJS](https://reactjs.org/) based on [Swapi API](https://swapi.dev/) and bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-#Design
+# Design
+
 The designs the project is based on can be found [here](https://www.figma.com/file/MDZZeWq0PKPNtZVjTdMpV3/Films). The Figma design file has both mobile and desktop layout ideas of how the application should look like in the Design page. (Only the desktop layout has a prototype showing how a simple search can be performed)
 
-###Figma design file pages are as follows: -**Design** - Contains Desktop and mobile layout -**Logo** - Project logo -**Icons** - Costume designed assets
+### Figma design file pages are as follows: -**Design** - Contains Desktop and mobile layout -**Logo** - Project logo -**Icons** - Costume designed assets
 
 ###Other design resources
 The colors in the design are mostly sourced from my [Colors's](https://ick-seshoka.github.io/colors/#/) color pallet
@@ -29,18 +31,19 @@ yarn install && yarn start
 
 launch your browser and navigate to `localhost:3000`
 
-###Project folder structure
+### Project folder structure
+
 The project is structured as follows: -**public**
 
-- public folder with `index.html` file -**src** -**api** - axios config objects -**assets** - images and icons -**components**
-  -stateless components -**containers**
-  -stateful components -**contexts** - contexts and their providers (used to manage search history in global state) -**enums** - helper enums -**helpers**
-  -helper functions -**hooks**
-  -costume hooks -**modules**
-  -actions, api calls, reducers, selectors (grouped by component file name) -**styles**
-  -theme and other style related files
+- public folder with `index.html` file - **src** - **api** - axios config objects - **assets** - images and icons - **components**
+  - stateless components - **containers**
+  - stateful components - **contexts** - contexts and their providers (used to manage search history in global state) - **enums** - helper enums - **helpers**
+  - helper functions - **hooks**
+  - costume hooks - **modules**
+  - actions, api calls, reducers, selectors (grouped by component file name) - **styles**
+  - theme and other style related files
 
-###Packages used in the project
+### Packages used in the project
 
 - [axios](https://www.npmjs.com/package/axios)
 - [normalize.css](https://www.npmjs.com/package/normalize.css)
