@@ -1,6 +1,7 @@
 import React, { createContext, useReducer } from "react";
 
-import reducer, {
+import {
+  reducer,
   initialState,
   getSearchHistory,
   addFilm,
