@@ -10,7 +10,9 @@ The designs the project is based on can be found [here](https://www.figma.com/fi
 
 ### Figma design file pages are as follows:
 
--**Design** - Contains Desktop and mobile layout -**Logo** - Project logo -**Icons** - Costume designed assets
+- **Design** : Contains Desktop and mobile layout
+- **Logo** : Project logo
+- **Icons** : Costume designed assets
 
 ### Other design resources
 
