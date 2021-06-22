@@ -14,7 +14,7 @@ The designs the project is based on can be found [here](https://www.figma.com/fi
 
 ### Other design resources
 
-The colors in the design are mostly sourced from my [Colors's](https://ick-seshoka.github.io/colors/#/) color pallet
+The colors in the design are mostly sourced from my [Colors](https://ick-seshoka.github.io/colors/#/) color pallet
 
 # How to install and run the project
 
@@ -42,26 +42,16 @@ The project is structured as follows:
   - public folder with `index.html` file
 - **src**
 
-  - **api**
-    - axios config objects
-  - **assets**
-    - images and icons
-  - **components**
-    - stateless components
-  - **containers**
-    - stateful components
-  - **contexts**
-    - contexts and their providers (used to manage search history in global state)
-  - **enums**
-    - helper enums
-  - **helpers**
-    - helper functions
-  - **hooks**
-    - costume hooks
-  - **modules**
-    - actions, api calls, reducers, selectors (grouped by component file name)
-  - **styles**
-    - theme and other style related files
+  - **api** : axios config objects
+  - **assets** : images and icons
+  - **components** : stateless components
+  - **containers** : stateful components
+  - **contexts** : contexts and their providers (used to manage search history in global state)
+  - **enums** : helper enums
+  - **helpers** : helper functions
+  - **hooks** : costume hooks
+  - **modules** : actions, api calls, reducers, selectors (grouped by component file name)
+  - **styles** : theme and other style related files
 
   ### Packages used in the project
 
