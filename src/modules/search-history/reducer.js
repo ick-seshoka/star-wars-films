@@ -4,7 +4,7 @@ export const initialState = {
   films: [],
 };
 
-function reducer(state = initialState, action) {
+export function reducer(state = initialState, action) {
   switch (action.type) {
     case actions.ADD_FILM_TO_SEARCH_HISTORY: {
       const {
@@ -27,5 +27,3 @@ function reducer(state = initialState, action) {
       return state;
   }
 }
-
-export default reducer;

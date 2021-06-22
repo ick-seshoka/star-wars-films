@@ -3,13 +3,9 @@ import { filmDetailsConfig } from "@api/film-details";
 
 export function fetchFilmDetails(id, token) {
   return axios(filmDetailsConfig(id, token))
-    .then(({ data }) => data)
+    .then(({ data }) => ({ error: null, results: data }))
     .catch((error) => {
       logger(error);
-      if (axios.isCancel(error)) {
-        return;
-      } else {
-        return "something went worng";
-      }
+      return { error, results: [] };
     });
 }

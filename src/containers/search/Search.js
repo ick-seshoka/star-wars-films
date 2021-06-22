@@ -1,8 +1,23 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useReducer, useRef } from "react";
 
+import {
+  searchFilms,
+  initialState,
+  reducer,
+  getSearch,
+  getError,
+  getLoading,
+  getFilms,
+  getTyping,
+  setSearch,
+  setTyping,
+  setError,
+  setFilms,
+  setLoading,
+} from "@modules/search";
 import { axios, trimString } from "@helpers";
 import { useDebounceValue } from "@hooks";
-import { searchFilms } from "@modules/search";
+
 import BackgroundWrap from "@components/background-wrap";
 import Header from "@components/header";
 import SearchInput from "@components/search-input";
@@ -13,12 +28,15 @@ import SearchHistory from "@components/search-history";
 import { Container, Status, Error, EmptyFilms, FilmsCount } from "./styles";
 
 const Search = () => {
-  const [search, setSearch] = useState("");
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
-  const [films, setFilms] = useState(null);
+  const [state, dispatch] = useReducer(reducer, initialState);
+  const search = getSearch(state);
+  const error = getError(state);
+  const loading = getLoading(state);
+  const films = getFilms(state);
+  const typing = getTyping(state);
   const mounted = useRef();
-  const [debouncedSearch, typing] = useDebounceValue(search, 500);
+
+  const [debouncedSearch] = useDebounceValue(search, 500);
 
   useEffect(() => {
     const request = axios.CancelToken.source();
@@ -27,19 +45,23 @@ const Search = () => {
       mounted.current = true;
     } else {
       if (debouncedSearch !== "" && error === "") {
-        setLoading(true);
-        searchFilms(debouncedSearch, request.token)
-          .then((films) => {
-            setFilms(films);
-          })
-          .catch((error) => {
-            setError(error);
-          })
-          .finally(() => {
-            setLoading(false);
-          });
+        setLoading(dispatch, true);
+        setTyping(dispatch, false);
+        searchFilms(debouncedSearch, request.token).then(
+          ({ error, results }) => {
+            if (error) {
+              if (!axios.isCancel(error)) {
+                setError("Something went wrong");
+                setLoading(dispatch, false);
+              }
+            } else {
+              setFilms(dispatch, results);
+              setLoading(dispatch, false);
+            }
+          }
+        );
       } else {
-        setFilms([]);
+        setFilms(dispatch, []);
       }
     }
 
@@ -51,11 +73,15 @@ const Search = () => {
   const inputChange = (e) => {
     const { value } = e.target;
     if (value.length >= 50) {
-      setError("Search value too long, should be less than 50 characters");
+      setError(
+        dispatch,
+        "Search value too long, should be less than 50 characters"
+      );
     } else {
-      setError("");
+      setError(dispatch, "");
     }
-    setSearch(value);
+    setSearch(dispatch, value);
+    setTyping(dispatch, true);
   };
 
   const isError = !loading && error && error !== "";
