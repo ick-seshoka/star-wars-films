@@ -8,9 +8,12 @@ A star wars film search web application idea built in [ReactJS](https://reactjs.
 
 The designs the project is based on can be found [here](https://www.figma.com/file/MDZZeWq0PKPNtZVjTdMpV3/Films). The Figma design file has both mobile and desktop layout ideas of how the application should look like in the Design page. (Only the desktop layout has a prototype showing how a simple search can be performed)
 
-### Figma design file pages are as follows: -**Design** - Contains Desktop and mobile layout -**Logo** - Project logo -**Icons** - Costume designed assets
+### Figma design file pages are as follows:
 
-###Other design resources
+-**Design** - Contains Desktop and mobile layout -**Logo** - Project logo -**Icons** - Costume designed assets
+
+### Other design resources
+
 The colors in the design are mostly sourced from my [Colors's](https://ick-seshoka.github.io/colors/#/) color pallet
 
 # How to install and run the project
@@ -33,28 +36,45 @@ launch your browser and navigate to `localhost:3000`
 
 ### Project folder structure
 
-The project is structured as follows: -**public**
+The project is structured as follows:
 
-- public folder with `index.html` file - **src** - **api** - axios config objects - **assets** - images and icons - **components**
-  - stateless components - **containers**
-  - stateful components - **contexts** - contexts and their providers (used to manage search history in global state) - **enums** - helper enums - **helpers**
-  - helper functions - **hooks**
-  - costume hooks - **modules**
-  - actions, api calls, reducers, selectors (grouped by component file name) - **styles**
-  - theme and other style related files
+- **public**
+  - public folder with `index.html` file
+- **src**
 
-### Packages used in the project
+  - **api**
+    - axios config objects
+  - **assets**
+    - images and icons
+  - **components**
+    - stateless components
+  - **containers**
+    - stateful components
+  - **contexts**
+    - contexts and their providers (used to manage search history in global state)
+  - **enums**
+    - helper enums
+  - **helpers**
+    - helper functions
+  - **hooks**
+    - costume hooks
+  - **modules**
+    - actions, api calls, reducers, selectors (grouped by component file name)
+  - **styles**
+    - theme and other style related files
 
-- [axios](https://www.npmjs.com/package/axios)
-- [normalize.css](https://www.npmjs.com/package/normalize.css)
-- [craco](https://www.npmjs.com/package/@craco/craco)
-- [react-loading-skeleton](https://www.npmjs.com/package/react-loading-skeleton)
-- [react-responsive](https://www.npmjs.com/package/react-responsive)
-- [react-svg](https://www.npmjs.com/package/react-svg)
-- [source-map-explorer](https://www.npmjs.com/package/source-map-explorer)
-- [moment](https://www.npmjs.com/package/moment)
-- [normalize](https://www.npmjs.com/package/normalize)
-- [prop-types](https://www.npmjs.com/package/prop-types)
-- [react-router-dom](https://www.npmjs.com/package/react-router-dom)
-- [reselect](https://www.npmjs.com/package/reselect)
-- [styled-components](https://www.npmjs.com/package/styled-components)
+  ### Packages used in the project
+
+  - [axios](https://www.npmjs.com/package/axios)
+  - [normalize.css](https://www.npmjs.com/package/normalize.css)
+  - [craco](https://www.npmjs.com/package/@craco/craco)
+  - [react-loading-skeleton](https://www.npmjs.com/package/react-loading-skeleton)
+  - [react-responsive](https://www.npmjs.com/package/react-responsive)
+  - [react-svg](https://www.npmjs.com/package/react-svg)
+  - [source-map-explorer](https://www.npmjs.com/package/source-map-explorer)
+  - [moment](https://www.npmjs.com/package/moment)
+  - [normalize](https://www.npmjs.com/package/normalize)
+  - [prop-types](https://www.npmjs.com/package/prop-types)
+  - [react-router-dom](https://www.npmjs.com/package/react-router-dom)
+  - [reselect](https://www.npmjs.com/package/reselect)
+  - [styled-components](https://www.npmjs.com/package/styled-components)
