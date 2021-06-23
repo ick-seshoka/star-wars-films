@@ -50,8 +50,8 @@ const Search = () => {
         searchFilms(debouncedSearch, request.token).then(
           ({ error, results }) => {
             if (error) {
-              if (!axios.isCancel(error)) {
-                setError("Something went wrong");
+              if (axios.isCancel(error)) {
+                setError(dispatch, "Something went wrong");
                 setLoading(dispatch, false);
               }
             } else {
