@@ -1,4 +1,4 @@
-import React, { createContext, useReducer } from "react";
+import React, { createContext, useContext, useReducer } from "react";
 
 import {
   reducer,
@@ -25,3 +25,5 @@ const SearchHistoryContextProvider = ({ children }) => {
 };
 
 export default SearchHistoryContextProvider;
+
+export const useSearchHistoryContext = () => useContext(SearchHistoryContext);

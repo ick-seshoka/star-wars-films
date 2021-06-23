@@ -1,7 +1,7 @@
-import React, { useEffect, useContext, memo } from "react";
+import React, { useEffect, memo } from "react";
 import PropTypes from "prop-types";
 
-import { SearchHistoryContext } from "@contexts/search-history";
+import { useSearchHistoryContext } from "@contexts/search-history";
 import { formatDate } from "@helpers";
 import { routes } from "@enums";
 import Skeleton from "./Skeleton";
@@ -28,7 +28,7 @@ import {
 } from "./styles";
 
 const Details = ({ details, loading, error }) => {
-  const { addFilmToSearchHistory } = useContext(SearchHistoryContext);
+  const { addFilmToSearchHistory } = useSearchHistoryContext();
 
   const {
     id,

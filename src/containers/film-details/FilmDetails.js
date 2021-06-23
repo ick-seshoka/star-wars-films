@@ -12,7 +12,7 @@ import {
   setDetails,
   fetchFilmDetails,
 } from "@modules/film-details";
-import { axios } from "@helpers";
+import { axios, getUrlSearchParams } from "@helpers";
 
 import BackgroundWrap from "@components/background-wrap";
 import Header from "@components/header";
@@ -26,8 +26,7 @@ const FilmDetails = () => {
   const error = getError(state);
   const loading = getLoading(state);
 
-  const useQuery = () => new URLSearchParams(useLocation().search);
-  const query = useQuery();
+  const query = getUrlSearchParams(useLocation().search);
   const id = query.get("id");
 
   useEffect(() => {

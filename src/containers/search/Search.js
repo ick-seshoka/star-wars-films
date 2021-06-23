@@ -15,7 +15,7 @@ import {
   setFilms,
   setLoading,
 } from "@modules/search";
-import { axios, trimString } from "@helpers";
+import { axios, trimString, isValidSearch } from "@helpers";
 import { useDebounceValue } from "@hooks";
 
 import BackgroundWrap from "@components/background-wrap";
@@ -72,7 +72,9 @@ const Search = () => {
 
   const inputChange = (e) => {
     const { value } = e.target;
-    if (value.length >= 50) {
+    const searchValid = isValidSearch(value);
+
+    if (!searchValid) {
       setError(
         dispatch,
         "Search value too long, should be less than 50 characters"

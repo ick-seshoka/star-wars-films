@@ -1,2 +1,2 @@
-export { SearchHistoryContext } from "./context";
+export { useSearchHistoryContext } from "./context";
 export { default } from "./context";

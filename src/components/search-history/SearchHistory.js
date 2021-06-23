@@ -1,12 +1,12 @@
-import React, { useContext, memo } from "react";
+import React, { memo } from "react";
 
-import { SearchHistoryContext } from "@contexts/search-history";
+import { useSearchHistoryContext } from "@contexts/search-history";
 import SearchHistoryFilm from "./SearchHistoryFilm";
 
 import { Container, HistoryLabel, Wrap } from "./styles";
 
 const SearchHistory = memo(() => {
-  const { films } = useContext(SearchHistoryContext);
+  const { films } = useSearchHistoryContext();
 
   if (films.length === 0) return null;
 
