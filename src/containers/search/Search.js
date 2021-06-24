@@ -50,7 +50,7 @@ const Search = () => {
         searchFilms(debouncedSearch, request.token).then(
           ({ error, results }) => {
             if (error) {
-              if (axios.isCancel(error)) {
+              if (!axios.isCancel(error)) {
                 setError(dispatch, "Something went wrong");
                 setLoading(dispatch, false);
               }
