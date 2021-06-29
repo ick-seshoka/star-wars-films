@@ -5,7 +5,7 @@ import { Container, Icon, Input, InputWrap, SearchIcon, Title } from "./styles";
 
 const SearchInput = ({ setSearch, search }) => (
   <Container>
-    <Title>Search for your favourite star wars movie</Title>
+    <Title>Search for your favorite star wars movie</Title>
     <InputWrap>
       <Input
         type="text"

@@ -1,15 +1,36 @@
 export function trimString(value) {
-  return value.trim();
+  try {
+    return value.trim();
+  } catch (error) {
+    throw new Error({
+      error,
+      errorInfo: "trim string value is undefined",
+    });
+  }
 }
 
 export function getUrlSearchParams(params) {
-  return new URLSearchParams(params);
+  try {
+    return new URLSearchParams(params);
+  } catch (error) {
+    throw new Error({
+      error,
+      errorInfo: "something went wrong creating new url search params",
+    });
+  }
 }
 
 export function isValidSearch(search) {
-  if (search.length >= 50) {
-    return false;
-  }
+  try {
+    if (search.length >= 50) {
+      return false;
+    }
 
-  return true;
+    return true;
+  } catch (error) {
+    throw new Error({
+      error,
+      errorInfo: `something went wrong validating search string: ${search}`,
+    });
+  }
 }
