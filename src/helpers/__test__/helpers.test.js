@@ -1,5 +1,5 @@
-import { trimString, getUrlSearchParams, isValidSearch } from "./utils";
-import { getFilmIdFromUrl } from "./film";
+import { trimString, getUrlSearchParams, isValidSearch } from "../utils";
+import { getFilmIdFromUrl } from "../film";
 
 describe("Test helpers", () => {
   test("Trim string", () => {

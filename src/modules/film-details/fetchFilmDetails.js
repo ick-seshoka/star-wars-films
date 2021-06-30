@@ -6,6 +6,6 @@ export function fetchFilmDetails(id, token) {
     .then(({ data }) => ({ error: null, results: data }))
     .catch((error) => {
       logger(error);
-      return { error, results: [] };
+      return { error, results: {} };
     });
 }
